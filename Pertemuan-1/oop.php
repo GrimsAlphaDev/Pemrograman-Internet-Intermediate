@@ -77,6 +77,10 @@ class CBR extends SportBike {
     public function getBrand(){
         return $this->brand;
     }
+    
+    public function getPrice(){
+        return $this->price;
+    }
 
 }
 
@@ -116,6 +120,10 @@ class Ninja extends SportBike {
 
     public function getBrand(){
         return $this->brand;
+    }
+
+    public function getPrice(){
+        return $this->price;
     }
 
 }
@@ -162,6 +170,10 @@ class R1200 extends AdventureBike {
         return $this->box . " Terpasang";
     }
 
+    public function getPrice(){
+        return $this->price;
+    }
+
 }
 
 class Adv extends AdventureBike {
@@ -201,6 +213,10 @@ class Adv extends AdventureBike {
         return $this->brand;
     }
 
+    public function getPrice(){
+        return $this->price;
+    }
+
 }
 
 // Membuat Object Dari Class CBR
@@ -214,6 +230,8 @@ echo "<br>";
 echo $cbr1000->getEngine();
 echo "<br>";
 echo $cbr1000->getBrand();
+echo "<br>";
+echo $cbr1000->getPrice();
 echo "<br><hr>";
 
 // Obj Kedua 
@@ -226,6 +244,8 @@ echo "<br>";
 echo $cbr600->getEngine();
 echo "<br>";
 echo $cbr600->getBrand();
+echo "<br>";
+echo $cbr600->getPrice();
 echo "<br><hr>";
 
 // Membuat Object Dari Class Ninja
@@ -239,6 +259,8 @@ echo "<br>";
 echo $ZX6R->getEngine();
 echo "<br>";
 echo $ZX6R->getBrand();
+echo "<br>";
+echo $ZX6R->getPrice();
 echo "<br><hr>";
 
 // Obj Kedua
@@ -254,6 +276,8 @@ echo "<br>";
 echo $H2R->getBrand();
 echo "<br>";
 echo $H2R->useSuperCharge();
+echo "<br>";
+echo $H2R->getPrice();
 echo "<br><hr>";
 
 
@@ -272,11 +296,13 @@ echo "<br>";
 echo $R1200GS->getBrand();
 echo "<br>";
 echo $R1200GS->getCrashbar();
+echo "<br>";
+echo $R1200GS->getPrice();
 echo "<br><hr>";
 
 
 // Obj Kedua
-$R1200RT = new R1200('R1200RT', 'Gray', 'Rp. 642.000.000', '2014');
+$R1200RT = new R1200('R1200RT', 'Gray', 'Rp. 854.000.000', '2014');
 $R1200RT->setEngine('1170 CC');
 $R1200RT->setheadlight('LED');
 $R1200RT->setBox('Full Box');
@@ -288,6 +314,8 @@ echo "<br>";
 echo $R1200RT->getBrand();
 echo "<br>";
 echo $R1200RT->getBox();
+echo "<br>";
+echo $R1200RT->getPrice();
 echo "<br><hr>";
 
 // Membuat Object Dari Class Adv
@@ -301,6 +329,8 @@ echo "<br>";
 echo $ADV->getEngine();
 echo "<br>";
 echo $ADV->getBrand();
+echo "<br>";
+echo $ADV->getPrice();
 echo "<br><hr>";
 
 // Obj Kedua 
@@ -316,7 +346,8 @@ echo "<br>";
 echo $XAdv->getBrand();
 echo "<br>";
 echo $XAdv->getBrake();
+echo "<br>";
+echo $XAdv->getPrice();
 echo "<br><hr>";
-
 
 ?>
