@@ -20,7 +20,6 @@ class SportBike {
         $this->seat = $seat;
     }
 
-
 }
 
 class AdventureBike {
@@ -224,6 +223,7 @@ class Adv extends AdventureBike {
 $cbr1000 = new CBR('CBR1000', '200 KG', 'Red', 'Rp. 1.000.000.000', '2022');
 $cbr1000->setEngine('1000 CC');
 $cbr1000->setFairing('Full Fairing');
+$cbr1000->setSeat('Single Seater');
 
 echo $cbr1000->getType();
 echo "<br>";
@@ -238,6 +238,7 @@ echo "<br><hr>";
 $cbr600 = new CBR('CBR600', '180 KG', 'Blue', 'Rp. 640.000.000', '2018');
 $cbr600->setEngine('600 CC');
 $cbr600->setFairing('Full Fairing');
+$cbr600->setHandleBarPosition('Low');
 
 echo $cbr600->getType();
 echo "<br>";
