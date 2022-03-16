@@ -24,7 +24,6 @@ class SportBike {
         $this->engine = $engine;
     }
 
-
 }
 
 class CBR extends SportBike {
@@ -72,7 +71,7 @@ class Ninja extends SportBike {
         $this->color = $color;
         $this->price = $price;
         $this->year = $year;
-        $this->brand = "Honda";
+        $this->brand = "Kawasaki";
         $this->superCharge = false;
     }
 
@@ -84,8 +83,8 @@ class Ninja extends SportBike {
         $this->superCharge = true;
     }
 
-   public function getSeat() {
-        return $this->seat;
+   public function useSuperCharge() {
+        return "Super Charge Siap Digunakan";
     }
 
     public function getEngine() {
@@ -115,6 +114,48 @@ echo "<br>";
 echo $cbr1000->getEngine();
 echo "<br>";
 echo $cbr1000->getBrand();
+echo "<br><hr>";
+
+// Obj Kedua 
+$cbr600 = new CBR('CBR600', '180 KG', 'Blue', 'Rp. 640.000.000', '2018');
+$cbr600->setEngine('600 CC');
+$cbr600->setFairing('Full Fairing');
+
+
+echo $cbr600->getType();
+echo "<br>";
+echo $cbr600->getEngine();
+echo "<br>";
+echo $cbr600->getBrand();
+echo "<br><hr>";
+
+// Membuat Object Dari Class Ninja
+// Obj Pertama
+$ZX6R = new Ninja('ZX6R', '179 KG', 'Violet', 'Rp. 312.000.000', '2017');
+$ZX6R->setEngine('600 CC');
+$ZX6R->setFairing('Full Fairing');
+
+
+echo $ZX6R->getType();
+echo "<br>";
+echo $ZX6R->getEngine();
+echo "<br>";
+echo $ZX6R->getBrand();
+echo "<br><hr>";
+
+// Obj Kedua
+$H2R = new Ninja('H2R', '195 KG', 'Green', 'Rp. 800.000.000', '2015');
+$H2R->setEngine('998 CC');
+$H2R->setFairing('80% Fairing');
+$H2R->setsuperCharge();
+
+echo $H2R->getType();
+echo "<br>";
+echo $H2R->getEngine();
+echo "<br>";
+echo $H2R->getBrand();
+echo "<br>";
+echo $H2R->useSuperCharge();
 echo "<br><hr>";
 
 
