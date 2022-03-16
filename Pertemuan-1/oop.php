@@ -2,10 +2,10 @@
 
 class SportBike {
 
-    protected $engine, $fairing, $wheel, $seat, $handlebarPosition;
+    protected $engine, $fairing, $seat, $handlebarPosition;
 
-    public function __construct($handlebarPosition = 'Low') {
-        $this->handlebarPosition = $handlebarPosition;
+    public function __construct() {
+        $this->handlebarPosition = "low";
     }
 
     public function setFairing($fairing) {
@@ -20,7 +20,22 @@ class SportBike {
         $this->seat = $seat;
     }
 
-    public function setEngine($engine) {
+
+}
+
+class AdventureBike {
+
+    protected $engine, $box, $seat, $handlebarPosition, $headlight;
+
+    public function __construct($handlebarPosition = 'High') {
+        $this->handlebarPosition = $handlebarPosition;
+    }
+
+    public function setSeat($seat){
+        $this->seat = $seat;
+    }
+
+    public function setheadlight($engine) {
         $this->engine = $engine;
     }
 
@@ -99,6 +114,45 @@ class Ninja extends SportBike {
         return $this->brand;
     }
 
+}
+
+class R1200 extends AdventureBike {
+
+    protected $type, $color, $price, $brand, $crashbar, $year;
+
+    public function __construct($type, $color, $price, $year)
+    {
+        $this->type = $type;
+        $this->color = $color;
+        $this->price = $price;
+        $this->brand = "BMW";
+        $this->year = $year;
+        $this->crashbar = false;
+    }
+
+    public function setEngine($engine) {
+        $this->engine = $engine;
+    }
+
+    public function setCrashbar(){
+        $this->crashbar = true;
+    }
+
+    public function getCrashbar(){
+        return "CrashBar Dipasang";
+    }
+   
+    public function getEngine() {
+        return $this->engine;
+    }
+
+    public function getType(){
+        return $this->type;
+    }
+
+    public function getBrand(){
+        return $this->brand;
+    }
 
 }
 
@@ -107,7 +161,6 @@ class Ninja extends SportBike {
 $cbr1000 = new CBR('CBR1000', '200 KG', 'Red', 'Rp. 1.000.000.000', '2022');
 $cbr1000->setEngine('1000 CC');
 $cbr1000->setFairing('Full Fairing');
-
 
 echo $cbr1000->getType();
 echo "<br>";
@@ -120,7 +173,6 @@ echo "<br><hr>";
 $cbr600 = new CBR('CBR600', '180 KG', 'Blue', 'Rp. 640.000.000', '2018');
 $cbr600->setEngine('600 CC');
 $cbr600->setFairing('Full Fairing');
-
 
 echo $cbr600->getType();
 echo "<br>";
@@ -158,6 +210,33 @@ echo "<br>";
 echo $H2R->useSuperCharge();
 echo "<br><hr>";
 
+// Membuat Object Dari Class R1200
+// Obj Pertama
+$R1200GS = new R1200('R1200GS', 'Gray', 'Rp. 642.000.000', '2014');
+$R1200GS->setEngine('1200 CC');
+$R1200GS->setheadlight('Full LED');
+$R1200GS->setCrashbar();
+
+echo $R1200GS->getType();
+echo "<br>";
+echo $R1200GS->getEngine();
+echo "<br>";
+echo $R1200GS->getBrand();
+echo "<br>";
+echo $R1200GS->getCrashbar();
+echo "<br><hr>";
+
+// Obj Kedua 
+$cbr600 = new CBR('CBR600', '180 KG', 'Blue', 'Rp. 640.000.000', '2018');
+$cbr600->setEngine('600 CC');
+$cbr600->setFairing('Full Fairing');
+
+echo $cbr600->getType();
+echo "<br>";
+echo $cbr600->getEngine();
+echo "<br>";
+echo $cbr600->getBrand();
+echo "<br><hr>";
 
 
 ?>
