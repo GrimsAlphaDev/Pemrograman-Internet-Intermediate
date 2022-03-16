@@ -35,6 +35,10 @@ class AdventureBike {
         $this->seat = $seat;
     }
 
+    public function setBox($box){
+        $this->box = $box;
+    }
+
     public function setheadlight($engine) {
         $this->engine = $engine;
     }
@@ -153,6 +157,49 @@ class R1200 extends AdventureBike {
     public function getBrand(){
         return $this->brand;
     }
+    
+    public function getBox(){
+        return $this->box . " Terpasang";
+    }
+
+}
+
+class Adv extends AdventureBike {
+
+    protected $type, $color, $price, $brand, $brake, $year;
+
+    public function __construct($type, $color, $price, $year)
+    {
+        $this->type = $type;
+        $this->color = $color;
+        $this->price = $price;
+        $this->brand = "Honda";
+        $this->year = $year;
+    }
+
+    public function setEngine($engine) {
+        $this->engine = $engine;
+    }
+
+    public function setBrake(){
+        $this->brake = "Dual Break";
+    }
+
+    public function getBrake(){
+        return "Dual Breaking System Dipasang";
+    }
+   
+    public function getEngine() {
+        return $this->engine;
+    }
+
+    public function getType(){
+        return $this->type;
+    }
+
+    public function getBrand(){
+        return $this->brand;
+    }
 
 }
 
@@ -187,7 +234,6 @@ $ZX6R = new Ninja('ZX6R', '179 KG', 'Violet', 'Rp. 312.000.000', '2017');
 $ZX6R->setEngine('600 CC');
 $ZX6R->setFairing('Full Fairing');
 
-
 echo $ZX6R->getType();
 echo "<br>";
 echo $ZX6R->getEngine();
@@ -210,6 +256,8 @@ echo "<br>";
 echo $H2R->useSuperCharge();
 echo "<br><hr>";
 
+
+
 // Membuat Object Dari Class R1200
 // Obj Pertama
 $R1200GS = new R1200('R1200GS', 'Gray', 'Rp. 642.000.000', '2014');
@@ -226,16 +274,48 @@ echo "<br>";
 echo $R1200GS->getCrashbar();
 echo "<br><hr>";
 
-// Obj Kedua 
-$cbr600 = new CBR('CBR600', '180 KG', 'Blue', 'Rp. 640.000.000', '2018');
-$cbr600->setEngine('600 CC');
-$cbr600->setFairing('Full Fairing');
 
-echo $cbr600->getType();
+// Obj Kedua
+$R1200RT = new R1200('R1200RT', 'Gray', 'Rp. 642.000.000', '2014');
+$R1200RT->setEngine('1170 CC');
+$R1200RT->setheadlight('LED');
+$R1200RT->setBox('Full Box');
+
+echo $R1200RT->getType();
 echo "<br>";
-echo $cbr600->getEngine();
+echo $R1200RT->getEngine();
 echo "<br>";
-echo $cbr600->getBrand();
+echo $R1200RT->getBrand();
+echo "<br>";
+echo $R1200RT->getBox();
+echo "<br><hr>";
+
+// Membuat Object Dari Class Adv
+// Obj Pertama
+$ADV = new Adv('Adv', 'White', 'Rp 34.000.000', '2022');
+$ADV->setEngine('150 CC');
+$ADV->setheadlight('LED');
+
+echo $ADV->getType();
+echo "<br>";
+echo $ADV->getEngine();
+echo "<br>";
+echo $ADV->getBrand();
+echo "<br><hr>";
+
+// Obj Kedua 
+$XAdv = new Adv('XAdv', 'Red', 'Rp 450.000.000', '2021');
+$XAdv->setEngine('750 CC');
+$XAdv->setheadlight('Full LED');
+$XAdv->setBrake();
+
+echo $XAdv->getType();
+echo "<br>";
+echo $XAdv->getEngine();
+echo "<br>";
+echo $XAdv->getBrand();
+echo "<br>";
+echo $XAdv->getBrake();
 echo "<br><hr>";
 
 
