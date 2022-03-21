@@ -9,7 +9,8 @@ if (isset($_POST['submit_simpan'])) {
     $uas = $_POST['uas'];
     $tugas = $_POST['tugas'];
     $model = new Model();
-    $model->insert($nim, $nama, $uts, $uas, $tugas); header('location:index.php');
+    $model->insert($nim, $nama, $uts, $uas, $tugas); 
+    header('location:index.php');
 }
 
 if (isset($_POST['submit_edit'])) {
@@ -19,11 +20,15 @@ if (isset($_POST['submit_edit'])) {
     $uas = $_POST['uas'];
     $tugas = $_POST['tugas'];
     $model = new Model();
-    $model->update($nim, $nama, $uts, $tugas, $uas); header('location:index.php');
-    }
-    if (isset($_GET['nim'])) {
+    $model->update($nim, $nama, $uts, $tugas, $uas); 
+    header('location:index.php');
+}
+
+if (isset($_GET['nim'])) 
+{
     $id = $_GET['nim'];
     $model = new Model();
-    $model->delete($id); header('location:index.php');
+    $model->delete($id); 
+    header('location:index.php');
 }
     

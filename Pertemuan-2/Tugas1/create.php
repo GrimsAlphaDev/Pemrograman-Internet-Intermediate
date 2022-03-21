@@ -6,10 +6,11 @@
 </head>
 
 <body>
+
     <h1>Tambah</h1>
     <a href="index.php">Kembali</a>
     <br><br>
-    <form action="proces.php" method="post">
+    <form action="process.php" method="post">
         <label>NIM</label>
             <br>
         <input type="text" name="nim">
@@ -28,9 +29,9 @@
             <br>
         <label>Tugas</label>
             <br>
-        <input type="number" name="tugs">
+        <input type="number" name="tugas">
             <br><br>
-        <button type="submit" name="subit_simpan">Submit</button>
+        <button type="submit" name="submit_simpan">Submit</button>
         <button type="reset">Reset</button>
     </form>
 </body>

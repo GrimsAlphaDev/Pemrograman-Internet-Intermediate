@@ -1,6 +1,7 @@
 <?php
     class Connection
     {
+        public $conn;
         public function get_connection()
         {
             $host = "localhost";
