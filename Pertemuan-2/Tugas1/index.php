@@ -48,7 +48,7 @@
                 <td>
                 <a name="edit" id="edit" href="edit.php
                 ?nim=<?= $data->nim ?>">Edit</a>
-                <a name="hapus" id="hapus" href="proces s.php?nim=<?= $data->nim ?>">Delete</a>
+                <a name="hapus" id="hapus" href="process.php?nim=<?= $data->nim ?>" onclick="return confirm('Apakah Anda Yakin ? ')">Delete</a>
                 </td>
                 </tr>
                 <?php endforeach;
