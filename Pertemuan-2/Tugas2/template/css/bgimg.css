@@ -1,0 +1,20 @@
+.bgimg {
+    background-image: url("../plugins/images/bgimg.jpg");
+    background-repeat: no-repeat, repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.welcome {
+  width: 100%;
+margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 900%);
+  color: antiquewhite;
+  background-color: rgba(0, 0, 0, 0.199);
+
+}
