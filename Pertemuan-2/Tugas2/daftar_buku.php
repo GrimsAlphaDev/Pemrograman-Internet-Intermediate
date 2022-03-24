@@ -2,7 +2,7 @@
     include 'model.php';
     $model = new Model();
     $index = 1;
-    $result = $model->tampil_data();
+    $result = $model->tampil_data("SELECT * FROM buku");
 ?>
 <?php include 'template/header.php' ?>
 <h2>Daftar Buku</h2>
@@ -25,11 +25,11 @@
         <td><?= $data['judul_buku'] ?></td>
         <td><?= $data['lembar'] ?></td>
         <td><?= $data['author'] ?></td>
-        <td><img src="template/plugins/images/books/<?= $data['gambar'] ?>" alt="$data['judul_buku'] ?>" style = "width :50px;"></td>
+        <td><img src="template/plugins/images/books/<?= $data['gambar'] ?>" alt="<?= $data['judul_buku'] ?>" style = "width :50px;"></td>
         <!-- <td><?php var_dump($data) ?></td> -->
         <td>
             <a href="edit.php?id_buku=<?= $data['id_buku'] ?>" class="btn btn-primary">Edit</a>
-            <a href="process.php?id_buku=<?= $data['id_buku'] ?>" class="btn btn-danger text-white" onclick="return confirm('Apakah Anda Yakin ? ')">Delete</a>
+            <a href="processBuku.php?id_buku=<?= $data['id_buku'] ?>" class="btn btn-danger text-white" onclick="return confirm('Apakah Anda Yakin ? ')">Delete</a>
         </td>
     </tbody>
     <?php $index++ ?>

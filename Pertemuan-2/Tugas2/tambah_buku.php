@@ -1,17 +1,22 @@
+<?php
+include 'model.php';
+
+?>
 <?php include 'template/header.php' ?>
 <h2>Tambah Buku</h2><br>
 
-<form>
+<form action="processBuku.php" method="post" enctype="multipart/form-data">
   <div class="mb-3">
     <label for="judulbuku" class="form-label">Judul Buku</label>
     <input type="text" class="form-control" name="judul" id="judulbuku" required>
 </div>
 <div class="mb-3">
-  <label for="kategori" class="form-label">Judul Buku</label>
-  <select class="form-select" name="kategori">
-  <option selected disabled>Pilih Kategori</option>
-  <option value="1">One</option>
-  </select>
+    <label for="kategori" class="form-label">Kategori Buku</label>
+    <select class="form-select mb-2" name="kategori">
+        <option selected disabled>Pilih Kategori</option>
+        <option value="1">One</option>
+    </select>
+    <a href="tambah_kategori.php">Tambah Kategori</a><br>
   </div>
   <div class="mb-3">
     <label for="lembar" class="form-label">Lembar Halaman</label>
@@ -23,10 +28,10 @@
   </div>
   <label for="gambar" class="form-label">Gambar</label>
   <div class="input-group mb-3">
-    <input type="file" class="form-control" id="gambar">
+    <input type="file" class="form-control" name="gambar" id="gambar">
   </div>
  
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" name="submit_simpanBuku" class="btn btn-primary">Submit</button>
 </form>
 
 <?php include 'template/footer.php' ?>
