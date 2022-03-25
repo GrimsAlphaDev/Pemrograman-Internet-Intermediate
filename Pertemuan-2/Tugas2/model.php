@@ -11,15 +11,14 @@
         public function tampil_data($sql)
         {
             $bind = $this->conn->query($sql);
-            return $bind;
-            while ($obj = $bind->fetch_object()) {
-                $baris[] = $obj;
-            }
-            if (!empty($baris)) 
-            { 
-                return $baris;
-            }
+            // return $bind;
+            $rows = [];
+            while ($row = mysqli_fetch_assoc($bind)) {
+                $rows[] = $row;
+            } 
+            return $rows;
         }
+        
 
         public function insertBook($data)
         {
@@ -33,7 +32,7 @@
                 return false ;
             }
 
-            $sql = "INSERT INTO buku (judul_buku, Kategori, lembar, author, gambar) VALUES ('$judul', '$kategori',
+            $sql = "INSERT INTO buku (id_kategori, judul_buku, lembar, author, gambar) VALUES ( '$kategori','$judul',
             '$lembar', '$author', '$gambar')";
             
             $this->conn->query($sql);
@@ -110,7 +109,7 @@
             if ($_FILES['gambar']['error'] === 4) {
                 $gambar = $gambarlama;
             } else  {
-                $gambar = upload();
+                $gambar = $this->upload($nama);
             }
             
         
@@ -135,7 +134,7 @@
                     alamat LIKE '%$keyword%' 
             ";
         
-            return tampil($query);
+            return $this->tampil_data($query);
         }
 
 }

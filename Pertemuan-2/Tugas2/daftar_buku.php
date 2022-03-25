@@ -28,7 +28,7 @@
         <td><img src="template/plugins/images/books/<?= $data['gambar'] ?>" alt="<?= $data['judul_buku'] ?>" style = "width :50px;"></td>
         <!-- <td><?php var_dump($data) ?></td> -->
         <td>
-            <a href="edit.php?id_buku=<?= $data['id_buku'] ?>" class="btn btn-primary">Edit</a>
+            <a href="edit_buku.php?id_buku=<?= $data['id_buku'] ?>" class="btn btn-primary">Edit</a>
             <a href="processBuku.php?id_buku=<?= $data['id_buku'] ?>" class="btn btn-danger text-white" onclick="return confirm('Apakah Anda Yakin ? ')">Delete</a>
         </td>
     </tbody>

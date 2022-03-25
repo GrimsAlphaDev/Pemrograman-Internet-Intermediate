@@ -53,7 +53,7 @@
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="template/plugins/images/logo-text.png" alt="homepage" />
+                            <img src="template/plugins/logo2.jpg" style="width: 180px;" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
