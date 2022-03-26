@@ -4,9 +4,6 @@
     $id = $_GET['id_peminjaman'];
     $pinjam = $model->tampil_data("SELECT * FROM peminjaman WHERE id_peminjaman = '$id'")[0];
     $buku = $model->tampil_data("SELECT id_buku,judul_buku FROM buku");
-    var_dump($pinjam);
-    var_dump($buku);
-    // die;
     
 ?>
 <?php include '../template/header.php' ?>

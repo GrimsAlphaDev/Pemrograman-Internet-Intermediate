@@ -5,7 +5,7 @@ include '../model.php';
 $model = new Model();
 $pinjam = $model->tampil_data("SELECT * FROM peminjaman,buku WHERE peminjaman.id_buku = buku.id_buku");
 $index = 1;
-var_dump($pinjam);
+// var_dump($pinjam);
 ?>
 
 

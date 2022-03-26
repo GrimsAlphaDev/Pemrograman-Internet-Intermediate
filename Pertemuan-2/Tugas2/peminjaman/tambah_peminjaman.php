@@ -22,7 +22,6 @@ $pinjam = $model->tampil_data("SELECT id_buku,judul_buku FROM buku");
        <option value="<?= $data['id_buku'] ?>"><?= $data['judul_buku'] ?></option>
       <?php endforeach; ?>
     </select>
-    <a href="tambah_kategori.php">Tambah Buku</a><br>
   </div>
 
   <div class="mb-3">
