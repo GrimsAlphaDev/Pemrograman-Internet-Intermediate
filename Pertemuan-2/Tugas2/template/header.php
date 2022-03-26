@@ -1,3 +1,6 @@
+<?php
+ $url = "http://localhost/pinternet/Pemrograman-Internet-Intermediate/Pertemuan-2/Tugas2/";
+ ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -10,13 +13,13 @@
     <title>Peminjaman Buku</title>
     
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="template/plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= $url ?>template/plugins/images/favicon.png">
     <!-- Custom CSS -->
-    <link href="template/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="template/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <link href="<?= $url ?>template/plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= $url ?>template/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
-    <link href="template/css/style.min.css" rel="stylesheet">
-    <link href="template/css/bgimg.css" rel="stylesheet">
+    <link href="<?= $url ?>template/css/style.min.css" rel="stylesheet">
+    <link href="<?= $url ?>template/css/bgimg.css" rel="stylesheet">
 </head>
 
 <body>
@@ -47,13 +50,13 @@
                         <!-- Logo icon -->
                         <b class="logo-icon">
                             <!-- Dark Logo icon -->
-                            <img src="template/plugins/images/logo-icon.png" alt="homepage" />
+                            <img src="<?= $url ?>template/plugins/images/logo-icon.png" alt="homepage" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="template/plugins/logo2.jpg" style="width: 180px;" alt="homepage" />
+                            <img src="<?= $url ?>template/plugins/logo2.jpg" style="width: 180px;" alt="homepage" />
                         </span>
                     </a>
                     <!-- ============================================================== -->
@@ -91,7 +94,7 @@
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="https://github.com/GrimsAlphaDev" target="_blank">
-                                <img src="template/plugins/images/users/Alpha.png" alt="user-img" width="36"
+                                <img src="<?= $url ?>template/plugins/images/users/Alpha.png" alt="user-img" width="36"
                                     class="img-circle"><span class="text-white font-medium">Haikal</span></a>
                         </li>
                         <!-- ============================================================== -->
@@ -115,47 +118,34 @@
                     <ul id="sidebarnav">
                         <!-- User Profile-->
                         <li class="sidebar-item pt-2">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= $url ?>index.php"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="daftar_buku.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= $url ?>daftar_buku.php"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
                                 <span class="hide-menu">Daftar Buku</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= $url ?>kategori/index.php"
                                 aria-expanded="false">
-                                <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Icon</span>
+                                <i class="fas fa-th-list" aria-hidden="true"></i>
+                                <span class="hide-menu">Kategori</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="map-google.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= $url ?>peminjaman/index.php"
                                 aria-expanded="false">
                                 <i class="fa fa-globe" aria-hidden="true"></i>
-                                <span class="hide-menu">Google Map</span>
+                                <span class="hide-menu">Peminjaman</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="blank.html"
-                                aria-expanded="false">
-                                <i class="fa fa-columns" aria-hidden="true"></i>
-                                <span class="hide-menu">Blank Page</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
-                                aria-expanded="false">
-                                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="hide-menu">Error 404</span>
-                            </a>
-                        </li>
+                        
                         
                     </ul>
 

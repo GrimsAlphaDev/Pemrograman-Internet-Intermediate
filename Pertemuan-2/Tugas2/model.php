@@ -37,7 +37,32 @@
             
             $this->conn->query($sql);
             return mysqli_affected_rows($this->conn);
-            // return mysqli_affected_rows($this->conn);
+            
+        }
+       
+        public function insertKategori($data)
+        {
+            $kategori = $data["kategori"];
+
+            $sql = "INSERT INTO kategori (nama_kategori) VALUES ( '$kategori')";
+            
+            $this->conn->query($sql);
+            return mysqli_affected_rows($this->conn);
+            
+        }
+        
+        public function insertPeminjaman($data)
+        {
+
+            $nama = $data["nama"];
+            $namaBuku = $data["nama_buku"];
+            $tanggalPinjam = $data["tglPinjam"];
+            $durasi = $data["durasi"];
+
+            $sql = "INSERT INTO peminjaman (nama_peminjam, id_buku, tgl_pinjam, durasi_pinjam) VALUES ( '$nama', '$namaBuku', '$tanggalPinjam', '$durasi')";
+            
+            $this->conn->query($sql);
+            return mysqli_affected_rows($this->conn);
             
         }
 
@@ -97,44 +122,78 @@
             return mysqli_affected_rows($this->conn);
         }
         
+        public function hapusKategori($id) {
+
+            $sql = "DELETE FROM kategori WHERE id_kategori='$id'";
+            $this->conn->query($sql);
+            return mysqli_affected_rows($this->conn);
+        }
+        
+        public function hapusPeminjaman($id) {
+
+            $sql = "DELETE FROM peminjaman WHERE id_peminjaman='$id'";
+            $this->conn->query($sql);
+            return mysqli_affected_rows($this->conn);
+        }
+        
         public function editBuku($data){
-            global $konek;
-            $id = $data["id"];
-            $nim = $data["nim"];
-            $nama = $data["nama"];
-            $kelas = $data["kelas"];
-            $alamat = $data["alamat"];
+            $id = $data["id_buku"];
+            $kategori = $data["kategori"];
+            $judul_buku = $data["judul_buku"];
+            $lembar = $data["lembar"];
+            $author = $data["author"];
             $gambarlama = $data["gambarlama"];
         
             if ($_FILES['gambar']['error'] === 4) {
                 $gambar = $gambarlama;
             } else  {
-                $gambar = $this->upload($nama);
+                $gambar = $this->upload($author);
             }
             
         
-            $query = "UPDATE siswa SET 
-                    nim = '$nim',
-                    nama = '$nama',
-                    kelas = '$kelas',
-                    alamat = '$alamat',
+            $sql = "UPDATE buku SET 
+                    id_kategori = '$kategori',
+                    judul_buku = '$judul_buku',
+                    lembar = '$lembar',
+                    author = '$author',
                     gambar = '$gambar'
-                    WHERE id = '$id'
+                    WHERE id_buku = '$id'
             ";
         
-            mysqli_query($konek, $query);
-            return mysqli_affected_rows($konek);
+            $this->conn->query($sql);
+            return mysqli_affected_rows($this->conn);
+        }
+       
+        public function editKategori($data){
+            $id = $data["id_kategori"];
+            $kategori = $data["nama_kategori"];
+    
+            $sql = "UPDATE kategori SET 
+                    nama_kategori = '$kategori'
+                    WHERE id_kategori = '$id'
+            ";
+        
+            $this->conn->query($sql);
+            return mysqli_affected_rows($this->conn);
         }
         
-        function cari($keyword){
-            $query = "SELECT *FROM siswa WHERE
-                    nim LIKE '%$keyword%' OR
-                    nama LIKE '%$keyword%' OR
-                    kelas LIKE '%$keyword%' OR
-                    alamat LIKE '%$keyword%' 
+        public function editPeminjaman($data){
+            $id = $data["id_peminjaman"];
+            $nama = $data["nama_peminjam"];
+            $idBuku = $data["nama_buku"];
+            $tgl = $data["tglPinjam"];
+            $durasi  = $data["durasi"]; 
+    
+            $sql = "UPDATE peminjaman SET 
+                    nama_peminjam = '$nama',
+                    id_buku = '$idBuku',
+                    tgl_pinjam = '$tgl',
+                    durasi_pinjam = '$durasi'
+                    WHERE id_peminjaman = '$id'
             ";
         
-            return $this->tampil_data($query);
+            $this->conn->query($sql);
+            return mysqli_affected_rows($this->conn);
         }
 
 }
