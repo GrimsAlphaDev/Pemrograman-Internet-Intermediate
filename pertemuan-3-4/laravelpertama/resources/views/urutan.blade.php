@@ -8,5 +8,5 @@
 </head>
 <body>
     Urutan Ke - {{ $ke }}
-</body>
-</html>
+</body> 
+</html> 
