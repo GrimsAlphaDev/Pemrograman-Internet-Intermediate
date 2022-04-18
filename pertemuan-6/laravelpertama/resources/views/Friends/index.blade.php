@@ -13,10 +13,10 @@
               <p class="card-text">{{ $friend['alamat'] }}</p>
               <a href="/friends/{{ $friend['id'] }}/edit" class="card-link btn btn-warning mb-1">Edit Teman</a>
               <form action="/friends/{{ $friend['id'] }}" method="POST">
-              @csrf
-              @method('DELETE')
-              <button class="card-link btn btn-danger" onclick="return confirm(`Apakah Anda Yakin Ingin Menghapus Data {{ $friend['nama'] }}`)">Delete Teman</button>
-            </form>
+                @csrf
+                @method('DELETE')
+                <button class="card-link btn btn-danger" onclick="return confirm(`Apakah Anda Yakin Ingin Menghapus Data {{ $friend['nama'] }}`)">Delete Teman</button>
+              </form>
             </div>
           </div>
 
