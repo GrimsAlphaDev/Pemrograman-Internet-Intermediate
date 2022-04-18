@@ -69,7 +69,7 @@ class CobaController extends Controller
     }
     
     public function update(Request $request , $id){
-        
+
         $request->validate([
             'nama' => 'required|unique:friends|max:255',
             'no_tlp' => 'required|numeric',
@@ -85,6 +85,11 @@ class CobaController extends Controller
 
         return redirect('/');
 
+    }
+
+    public function destroy($id){
+        Friends::find($id)->delete();
+        return redirect('/');
     }
 
 
