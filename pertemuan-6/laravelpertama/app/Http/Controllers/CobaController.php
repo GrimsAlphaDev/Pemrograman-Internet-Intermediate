@@ -37,6 +37,11 @@ class CobaController extends Controller
     public function store(Request $request)
     {
         // Validate the request...
+        $request->validate([
+            'nama' => 'required|unique:friends|max:255',
+            'no_tlp' => 'required|numeric',
+            'alamat' => 'required'
+        ]);
  
         $friends = new Friends();
  
@@ -55,5 +60,32 @@ class CobaController extends Controller
         return view('Friends.show', ['friend' => $friend]);
 
     }
+   
+    public function edit($id){
+        
+        $friend = Friends::where('id', $id)->first();
+        return view('Friends.edit', ['friend' => $friend]);
+
+    }
+    
+    public function update(Request $request , $id){
+        
+        $request->validate([
+            'nama' => 'required|unique:friends|max:255',
+            'no_tlp' => 'required|numeric',
+            'alamat' => 'required'
+        ]);
+
+        Friends::find($id)->update([
+            'nama' => $request->nama,
+            'no_telp' => $request->no_tlp,
+            'alamat' => $request->alamat
+            
+        ]);
+
+        return redirect('/');
+
+    }
+
 
 }
