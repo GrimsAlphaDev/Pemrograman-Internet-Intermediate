@@ -31,3 +31,4 @@ Route::get('', [CobaController::class, 'index']);
 Route::get('/friends', [CobaController::class, 'index']);
 Route::get('/friends/create', [CobaController::class, 'create']);
 Route::post('/friends', [CobaController::class, 'store']);
+Route::get('/friends/{id}', [CobaController::class, 'show']);

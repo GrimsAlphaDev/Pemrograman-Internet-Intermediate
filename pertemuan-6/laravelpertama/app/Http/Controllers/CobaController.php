@@ -24,14 +24,14 @@ class CobaController extends Controller
 
     public function index()
     {
-        $friends = Friends::paginate(2);
+        $friends = Friends::orderBy('id', 'desc')->paginate(3);
 
-        return view('index', compact('friends'));
+        return view('Friends.index', compact('friends'));
     }
     
     public function create()
     {
-        return view('create');
+        return view('Friends.create');
     }
     
     public function store(Request $request)
@@ -45,6 +45,15 @@ class CobaController extends Controller
         $friends->alamat = $request->alamat;
  
         $friends->save();
+
+        return redirect('/');
+    }
+    
+    public function show($id){
+        
+        $friend = Friends::where('id', $id)->first();
+        return view('Friends.show', ['friend' => $friend]);
+
     }
 
 }
